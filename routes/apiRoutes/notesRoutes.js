@@ -29,6 +29,16 @@ router.post("/notes", (req, res) => {
 });
 
 // Using DELETE
-// router.delete("/notes/:id")
+router.delete("/notes/:id", (req, res) => {
+    const newNoteId = uuidv4();
+    const newNotes = userNotes.filter((uuidv4) => {uuidv4.id != newNoteId})
+
+    if(!newNotes){
+        res.status(500).send("Note was not found.");
+    } else {
+        userNotes = newNotes;
+        res.send(userNotes);
+    }
+});
 
 module.exports = router;
