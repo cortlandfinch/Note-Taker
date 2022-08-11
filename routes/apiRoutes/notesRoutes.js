@@ -28,7 +28,7 @@ router.post("/notes", (req, res) => {
     fs.writeFileSync('./db/db.json', JSON.stringify(userNotes));
 });
 
-// Using DELETE
+// Using DELETE to remove any notes added **currently broken
 router.delete("/notes/:id", (req, res) => {
     const newNoteId = uuidv4();
     const newNotes = userNotes.filter((uuidv4) => {uuidv4.id != newNoteId})
