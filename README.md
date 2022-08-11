@@ -1,5 +1,8 @@
 # Note-Taker
-run application: node server.js
+run application locally: node server.js
+
+otherwise go to https://stormy-ridge-95940.herokuapp.com/ 
+for deployed app.
 
 ## User Story
 AS A small business owner
