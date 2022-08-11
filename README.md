@@ -1,4 +1,5 @@
 # Note-Taker
+run application: node server.js
 
 ## User Story
 AS A small business owner
