@@ -16,7 +16,7 @@ router.get('/notes', (req, res) => {
 router.post("/notes", (req, res) => {
     // using newNoteId for uuid so each note gets its own unique id everytime it is called
     const newNoteId = uuidv4();
-    // usn
+    // using userNote to construct to db.json
     const userNote = {
         id: newNoteId,
         title: req.body.title,
@@ -24,10 +24,11 @@ router.post("/notes", (req, res) => {
     };
     userNotes.push(userNote);
     res.json(userNote);
+    // converts userNotes to string 
     fs.writeFileSync('./db/db.json', JSON.stringify(userNotes));
 });
 
 // Using DELETE
-router.delete("/notes/:id")
+// router.delete("/notes/:id")
 
 module.exports = router;
